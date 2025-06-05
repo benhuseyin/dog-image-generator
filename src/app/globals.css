@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Outfit";
+  src: url("/app/assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("/app/assets/fonts/Fredoka-VariableFont_wght.ttf");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #171717;
+  --primary: #ff9f1c;
+  --secondary: #2ec4b6;
+  --accent: #e71d36;
+  --text: #2d3142;
+  --muted: #bfc0c0;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--muted);
+  font-family: "Fredoka", sans-serif;
 }
